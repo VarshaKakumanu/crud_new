@@ -25,8 +25,8 @@ const UserList = () => {
     });
   };
 
-  const enableEdit = (id, user_name, user_email) => {
-    setNewData({ id, user_name, user_email });
+  const enableEdit = (id, user_name, user_email,) => {
+    setNewData({ id, user_name, user_email, });
     editMode(id);
   };
 
@@ -44,11 +44,12 @@ const UserList = () => {
         <tr>
           <th>Name</th>
           <th>Task</th>
+          <th>Email</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        {users.map(({ id, user_name, user_email, isEditing }) => {
+        {users.map(({ id, user_name, user_email,isEditing }) => {
           return isEditing === true ? (
             <tr key={id}>
               <td>
@@ -58,6 +59,7 @@ const UserList = () => {
                   onChange={(e) => updateNewData(e, "user_name")}
                 />
               </td>
+            
               <td>
                 <input
                   type="email"
@@ -84,7 +86,7 @@ const UserList = () => {
               <td>
                 <button
                   className="btn default-btn"
-                  onClick={() => enableEdit(id, user_name, user_email)}
+                  onClick={() => enableEdit(id, user_name, user_email,)}
                 >
                   Edit
                 </button>
