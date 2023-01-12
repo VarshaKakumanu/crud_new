@@ -99,6 +99,7 @@ export const Actions = () => {
               user.isEditing = false;
               user.user_name = userData.user_name;
               user.user_email = userData.user_email;
+              user.user_task = userData.user_task;
               return user;
             }
             return user;
