@@ -33,7 +33,7 @@ const Form = () => {
       />
       <label htmlFor="_email">Task</label>
       <input
-        type="text"
+        type="email"
         id="_email"
         onChange={(e) => addNewUser(e, "user_email")}
         placeholder="Enter task"
