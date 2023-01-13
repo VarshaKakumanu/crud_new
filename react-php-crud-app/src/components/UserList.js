@@ -25,8 +25,8 @@ const UserList = () => {
     });
   };
 
-  const enableEdit = (id, user_name, user_email,) => {
-    setNewData({ id, user_name, user_email, });
+  const enableEdit = (id, user_name, user_email,user_task) => {
+    setNewData({ id, user_name, user_email,user_task });
     editMode(id);
   };
 
@@ -43,13 +43,15 @@ const UserList = () => {
       <thead>
         <tr>
           <th>Name</th>
+          <th>Email</th>
           <th>Task</th>
           <th>Email</th>
           <th>Action</th>
+
         </tr>
       </thead>
       <tbody>
-        {users.map(({ id, user_name, user_email,isEditing }) => {
+        {users.map(({ id, user_name, user_email, isEditing,user_task }) => {
           return isEditing === true ? (
             <tr key={id}>
               <td>
@@ -68,6 +70,13 @@ const UserList = () => {
                 />
               </td>
               <td>
+                <input
+                  type="text"
+                  defaultValue={user_task}
+                  onChange={(e) => updateNewData(e, "user_task")}
+                />
+              </td>
+              <td>
                 <button className="btn green-btn" onClick={() => saveBtn()}>
                   Save
                 </button>
@@ -83,10 +92,11 @@ const UserList = () => {
             <tr key={id}>
               <td>{user_name}</td>
               <td>{user_email}</td>
+              <td>{user_task}</td>
               <td>
                 <button
                   className="btn default-btn"
-                  onClick={() => enableEdit(id, user_name, user_email,)}
+                  onClick={() => enableEdit(id, user_name, user_email,user_task)}
                 >
                   Edit
                 </button>

@@ -31,12 +31,20 @@ const Form = () => {
         autoComplete="off"
         required
       />
-      
       <label htmlFor="_email">Task</label>
       <input
         type="email"
         id="_email"
         onChange={(e) => addNewUser(e, "user_email")}
+        placeholder="Enter task"
+        autoComplete="off"
+        required
+      />
+      <label htmlFor="_task">Task</label>
+      <input
+        type="text"
+        id="_task"
+        onChange={(e) => addNewUser(e, "user_task")}
         placeholder="Enter task"
         autoComplete="off"
         required
